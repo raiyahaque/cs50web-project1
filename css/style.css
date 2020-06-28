@@ -1,0 +1,48 @@
+body {
+  background: #eee;
+}
+h1 {
+  font-family: courier;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+h2 {
+  font-family: courier;
+  text-align: center;
+  color: tan;
+}
+h3 {
+  font-family: courier;
+  color: tan;
+}
+.form-group > input {
+  font-family: courier;
+}
+
+.form-group > button {
+  background-color: tan;
+  font-family: courier;
+}
+.form-group > button:hover {
+  background-color: brown;
+}
+li, li > a {
+  color: tan;
+  font-size: 20px;
+  font-family: courier;
+}
+.container > a {
+  background-color: tan;
+  font-family: courier;
+}
+
+.row > a {
+  background-color: tan;
+  font-family: courier;
+  width: 20%;
+}
+.row > a:hover {
+  background-color: brown;
+}

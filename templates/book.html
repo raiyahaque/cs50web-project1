@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Book
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <h3>{{ currentUsername }}</h3>
+  </div>
+</div>
+<h1>Books</h1>
+    <h2>Book Details</h2>
+
+    <ul>
+        {% for booksearch in booksearches %}
+            <li>ISBN: {{ booksearch.isbn }}</li>
+            <li>Title: {{ booksearch.title }}</li>
+            <li>Author: {{ booksearch.author }} </li>
+            <li>Publication Year: {{ booksearch.year }}</li>
+            <li>Goodreads Average Rating: {{ book_avg_rating }}</li>
+            <li>Goodreads Number of Ratings: {{ book_ratings_count }}</li>
+            <li> Reviews: </li>
+              <ul>
+                  {% for bookreview in book_reviews %}
+                    <li>User: {{ bookreview.usernames}}</li>
+                    <ul>
+                      <li>Rating: {{ bookreview.rating}}</li>
+                      <li> {{ bookreview.comment}}</li>
+                    </ul>
+                  {% endfor %}
+              </ul>
+
+            <form action="{{ url_for('book_details', book_title=booksearch.title) }}" method="post">
+
+              <div class="form-group">
+                <input class="form-control" name="Rating" placeholder="Rating from 1 to 5">
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" name="Review" placeholder="Review">
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-primary">Submit Review</button>
+              </div>
+
+            </form>
+          {% endfor %}
+    </ul>
+{% endblock %}
